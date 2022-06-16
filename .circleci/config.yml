@@ -26,8 +26,6 @@ jobs:
           name: 'say hello'
           command: 'echo hello'
   print-world:
-    requires:
-      - print-hello
     docker:
       - image: circleci/node:13.8.0
     steps:
