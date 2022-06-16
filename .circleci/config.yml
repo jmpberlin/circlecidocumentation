@@ -23,7 +23,7 @@ jobs:
     steps: 
       - checkout 
       - run: 
-          name: "say hello"  
+          name: "say hellolnljljn"  
           command: "echo hello"
 
 # Invoke jobs via workflows
