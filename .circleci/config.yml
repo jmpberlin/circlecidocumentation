@@ -25,8 +25,12 @@ jobs:
       - run:
           name: 'say hello'
           command: 'echo hello'
-      - run: mkdir -p workspace  
-      - run: echo "hello world!" > workspace/output.txt     
+      - run: mkdir -p workspace
+      - run: echo "hello world!" > workspace/output.txt
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - output.txt
   print-world:
     docker:
       - image: circleci/node:13.8.0
