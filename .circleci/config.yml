@@ -31,9 +31,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'say hello'
+          name: 'say world'
           command: |
-            echo $MY_NAME_ENV 
+            "echo $MY_NAME_ENV"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -42,5 +42,5 @@ workflows:
       - say-hello
       - print-hello
       - print-world:
-          requires: 
+          requires:
             - print-hello
