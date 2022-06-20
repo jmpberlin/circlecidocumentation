@@ -56,8 +56,8 @@ jobs:
       - run: whoami
       - run: ls -la
       - run: |
-        cd workspace
-        cat output.txt
+          cd workspace
+          cat output.txt
       - sayhello:
           to: 'asd'
 
