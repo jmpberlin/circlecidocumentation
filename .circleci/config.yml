@@ -2,6 +2,16 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+commands:
+  sayhello:
+    description: 'a very simple command to write something to the console'
+    parameters:
+      to:
+        type: string
+        default: 'Hello world!'
+    steps:
+      - run: echo << parameters.to >>
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -46,6 +56,8 @@ jobs:
       - run: whoami
       - run: ls -la
       - run: cat workspace/output.txt
+      - say-hello:
+          to: 'asd'
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
