@@ -56,7 +56,7 @@ jobs:
       - run: whoami
       - run: ls -la
       - run: cat workspace/output.txt
-      - say-hello:
+      - sayhello:
           to: 'asd'
 
 # Invoke jobs via workflows
